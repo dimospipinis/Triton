@@ -291,7 +291,7 @@ prevcall = [];
    %results = table(date,seconds,check);
    results = [maintable,check];
    filename = split(PathFileListCsv,'.csv');
-   csvname = [filename{fidx},'_Bm_thresh',num2str(thresh),'.csv'];
+   csvname = [filename{fidx},'_Bm_thresh.',num2str(thresh),'.csv'];
    writetable(results,csvname); 
    
    %Write label file
@@ -303,7 +303,7 @@ labelname = [filename{fidx},'_Bm_thresh', num2str(thresh),'.tlab'];
 ioWriteLabel(labelname,times,'Bm','Binary',true);
 
     %Write mat file
-%     matname = [filename{fidx},'_Bm_thresh',num2str(thresh),'.mat'];
+%     matname = [filename{fidx},'_Bm_thresh.',num2str(thresh),'.mat'];
 %     settings = REMORA.bm.settings;
 %     %remove padded text
 %     endtime = maintable.abstime + datenum([0 0 0 0 0 10]);
